@@ -12,10 +12,12 @@ Call function dev_connection that have all device and user information to connec
 """
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable() # Needed beacause command below is necessary privilege 15 to be executed
-show_route = net_connect.send_command('show route | in PACI')
+
+customer = ['Itau']
+show_route = net_connect.send_command(f'show route | in {customer}')
 
 def routing_table():
-    print(f'Routing Table - PACI\n\n{show_route}')
+    print(f'Routing Table - {customer}\n\n{show_route}')
     """
     Regex pattern to find exatly subnets
     """
@@ -37,7 +39,7 @@ def routing_table():
         print('edit 0')
         print(f'set dst {i}')
         print(f'set gateway {gw}')
-        print('set device "TRUST-PACI-DCV-1/38.123"')
+        print(f'set device "TRUST-{customer}-1/38.123"')
         print('next')
 print('end')
 routing_table()

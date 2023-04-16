@@ -14,7 +14,6 @@ Call function dev_connection that have all device and user information to connec
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable() # Needed beacause command below is necessary privilege 15 to be executed
 term_pager0 = net_connect.send_command('terminal pager 0')
-show1_intface = net_connect.send_command(f'show run interface')
 show_intface = net_connect.send_command(f'show run interface | in Port-channel11.')
 iface = show_intface.splitlines()
 print(f'Cisco ASA - {iface}')
@@ -28,11 +27,7 @@ def collect_interfaces():
         """
         Regex pattern to find exatly subnets
         """
-        int_pattern = re.compile(r"interface (?P<intface>\S......)")
-        int_match = int_pattern.search(cmd)
-        intface = int_match.group("intface")
-        int_match = re.findall(int_pattern, cmd)
-
+        
         vlan_pattern = re.compile(r"vlan (?P<vlanid>\S.*)")
         vlan_match = vlan_pattern.search(cmd)
         vlanid = vlan_match.group("vlanid")
@@ -48,7 +43,7 @@ def collect_interfaces():
         ipaddr = ipaddr_match.group("ipaddr")
         ipaddr_match = re.findall(ipaddr_pattern, cmd)
 
-        print(f'edit "TRUST-PACI-DCV-1/38.{vlanid}')
+        print(f'edit "TRUST-1/38.{vlanid}')
         print(f'set vdom "DCV"')
         print(f'set ip {ipaddr}')
         print(f'set allowaccess ping')
