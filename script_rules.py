@@ -11,7 +11,7 @@ start_time = datetime.now()
 Call function dev_connection that have all device and user information to connect and collect
 """
 net_connect = ConnectHandler(**dev_connection.iosv)
-net_connect.enable()
+net_connect.enable() # The command below need user privilege to be executed
 
 # Take access-lists configuration on Cisco ASA based on customer to use as variable
 cmd = net_connect.send_command(f'show run access-list | in Itau')
