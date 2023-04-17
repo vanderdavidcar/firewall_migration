@@ -16,7 +16,7 @@ cmd = net_connect.send_command(f'show run access-list | in INBURSA')
 print(cmd)
 rules = cmd.splitlines()
 
-untrustintf = 'UNTRUST-DCV (DCV-1/39.1505)'
+untrustintf = 'UNTRUST-1/39.1505)'
 """
 Creation rules UNTRUST
 """
