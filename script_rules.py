@@ -12,13 +12,15 @@ Call function dev_connection that have all device and user information to connec
 """
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable()
-cmd = net_connect.send_command(f'show run access-list | in INBURSA')
+
+# Take access-lists configuration on Cisco ASA based on customer to use as variable
+cmd = net_connect.send_command(f'show run access-list | in Itau')
 print(cmd)
 rules = cmd.splitlines()
 
 untrustintf = 'UNTRUST-1/39.1505'
 """
-Creation rules UNTRUST
+Creation rules UNTRUST on Fortigate
 """
 # Create Policy objects 
 print('config firewall policy')
