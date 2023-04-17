@@ -37,7 +37,7 @@ for i in rules:
     if dstaddr in i:
         print('edit 0')
         print(f'set name "{name_rule}"')
-        print('set srcintf "DCV"')
+        print('set srcintf "TRUST"')
         print(f'set dstintf "{untrustintf}"')
         print(f'set srcaddr "ALL"')
         print(f'set dstaddr "{dstaddr}"')
