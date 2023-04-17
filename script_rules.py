@@ -15,7 +15,6 @@ net_connect.enable() # The command below need user privilege to be executed
 
 # Take access-lists configuration on Cisco ASA based on customer to use as variable
 cmd = net_connect.send_command(f'show run access-list | in Itau')
-print(cmd)
 rules = cmd.splitlines()
 
 untrustintf = 'UNTRUST-1/39.1505'
