@@ -16,13 +16,7 @@ cmd = net_connect.send_command(f'show run access-list | in {customer}')
 print(cmd)
 
 untrustintf = 'UNTRUST-1/39.1505)'
-"""
-Creation rules UNTRUST
-"""
-# Create Policy objects 
-"""
-Regex pattern to find exatly subnets
-"""
+
 # Pattern to find only access-list IP
 pattern = re.compile(r"access-list (?P<name_rule>\S+)(?=.*\bip\b)")
 match = pattern.search(cmd)
