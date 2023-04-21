@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from netmiko import ConnectHandler
 import dev_connection
 import re
@@ -8,16 +10,16 @@ import logging
 
 start_time = datetime.now()
 
+customer = 'ITAU'
 """
 Call function dev_connection that have all device and user information to connect and collect
 """
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable() # Needed beacause command below is necessary privilege 15 to be executed
 term_pager0 = net_connect.send_command('terminal pager 0')
-show1_intface = net_connect.send_command(f'show run interface')
 show_intface = net_connect.send_command(f'show run interface | in Port-channel11.')
 iface = show_intface.splitlines()
-print(f'Cisco ASA - {iface}')
+print(f'Cisco ASA interface- {iface}')
 
 def collect_interfaces():
     print('Fortigate interfaces')
