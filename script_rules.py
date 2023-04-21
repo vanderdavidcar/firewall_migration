@@ -11,7 +11,8 @@ load_dotenv()
 start_time = datetime.now()
 
 """
-Call function dev_connection that have all device and user information to connect and collect
+Call function dev_connection that have all device and user information
+to connect and collect
 """
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable()
@@ -23,7 +24,7 @@ print(cmd)
 untrustintf = "UNTRUST-1/39.1505)"
 
 """
-Handle exception when does not have a specific match 
+Handle exception when does not have a specific match
 """
 
 # Pattern to find only access-list extended IP
@@ -52,8 +53,8 @@ standssl = re.findall(pattern_standssl, cmd)
 
 # Creating policy to permite network on SSL (Split tunnel)
 def ip_access_standard():
+
     for i in standssl:
-        print("No such attribute")
         print("edit 0")
         print(f'set name "{i[0]}"')
         print('set srcintf "Shared"')
@@ -69,18 +70,21 @@ def ip_access_standard():
 ip_access_standard()
 
 # Creating policy IP
+
+
 def ip_access_list_ext():
+
     for i in match_acc_std:
         print("edit 0")
         print(f'set name "{i[0]}"')
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[1]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[1]}"')
         if "any" in i[2]:
-            print(f'set dstaddr "all"')
+            print('set dstaddr "all"')
         else:
             print(f'set dstaddr "{i[2]}"')
         print("set action accept")
@@ -94,7 +98,7 @@ def ip_access_list_ext():
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[1]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[1]}"')
         print(f'set dstaddr "{i[2]}"')
@@ -109,7 +113,7 @@ def ip_access_list_ext():
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[1]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[1]}"')
         print(f'set dstaddr "{i[2]}"')
@@ -124,7 +128,7 @@ def ip_access_list_ext():
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[1]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[1]}"')
         print(f'set dstaddr "{i[2]}"')
@@ -159,14 +163,14 @@ def tcp_access_list():
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[2]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[2]}"')
         print(f'set dstaddr "{i[3]}"')
         print("set action accept")
         print('set schedule "always"')
         if "any" in i[1]:
-            print(f'set service "all"')
+            print('set service "all"')
         else:
             print(f'set service "{i[1]}"')
         print("set fsso disable")
@@ -178,14 +182,14 @@ def tcp_access_list():
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[2]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[2]}"')
         print(f'set dstaddr "{i[4]}"')
         print("set action accept")
         print('set schedule "always"')
         if "any" in i[1]:
-            print(f'set service "all"')
+            print('set service "all"')
         else:
             print(f'set service "{i[1]}"')
         print("set fsso disable")
@@ -211,7 +215,7 @@ def deny_access_list():
         print('set srcintf "Shared"')
         print(f'set dstintf "{untrustintf}"')
         if "any" in i[3]:
-            print(f'set srcaddr "all"')
+            print('set srcaddr "all"')
         else:
             print(f'set srcaddr "{i[3]}"')
         print(f'set dstaddr "{i[5]}"')
