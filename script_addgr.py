@@ -27,7 +27,7 @@ def create_objects():
 
     for name in objects:
         if name in objects:
-            print(f"\nNetwork Objects {name.upper()}_PACI")
+            print(f"\nNetwork Objects {name.upper()}")
             redes = open(f"{name}_new_ips.txt", "r")
             address = redes.read().split()
 
@@ -64,7 +64,7 @@ def create_objects():
         # Create objects address group
         print("\nconfig firewall addrgrp")
         b = '" "'.join(address)
-        print(f"edit {name}_PACI")
+        print(f"edit {name}")
         print(f"set member append {b}\n")
 
     end_time = datetime.now()
