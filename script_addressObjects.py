@@ -21,7 +21,7 @@ show_services = net_connect.send_command(f"show running-config object | in servi
 
 def create_object_addr():
 
-    # this regex is to match for gigabit, ethernet, fastethernet and loopback.
+    # this regex is to match for Objects network, host, subnet and range IP address on Cisco ASA
     obj_pattern = "network (?P<name>\S+)"
     hst_pattern = "host (?P<host>\S+)"
     sub_pattern = "subnet (?P<subnet>\S+)"
@@ -63,7 +63,7 @@ create_object_addr()
 
 def create_services_obj():
 
-    # this regex is to match for all services on firewall Cisco ASA
+    # this regex is to match for all services object configured on firewall Cisco ASA
     srv_pattern = "object service (?P<service>\S+)"
     srv_regex = re.compile(srv_pattern)
 
