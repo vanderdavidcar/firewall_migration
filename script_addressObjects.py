@@ -21,7 +21,7 @@ show_services = net_connect.send_command(f"show running-config object | in servi
 
 def create_object_addr():
 
-    # this regex is to match for Objects network, host, subnet and range IP address on Cisco ASA
+    # this regex is to match for object network, host, subnet and range.
     obj_pattern = "network (?P<name>\S+)"
     hst_pattern = "host (?P<host>\S+)"
     sub_pattern = "subnet (?P<subnet>\S+)"
@@ -37,23 +37,27 @@ def create_object_addr():
 
     print(f"\nconfig firewall address")
     for line in show_run.splitlines():
-        # check for interface names only
+        ## check for interface names only
         if regex_nam.search(line):
             name = line.split()[2]
             print(f"edit {name}")
         if regex_hst.search(line):
             host = line.split()[1]
-            print(f"{host}/32")
+            print('set type ipmask')
+            print(f"set subnet {host} 255.255.255.252")
             print("next")
         if regex_sub.search(line):
             sub = line.split()[1:]
             subnet = " ".join(sub)
-            print(subnet)
+            print('set type ipmask')
+            print(f'set subnet {subnet}')
             print("next")
         if regex_rng.search(line):
-            rng = line.split()[1:]
-            range = " ".join(rng)
-            print(range)
+            range = line.split()[1:]
+            #range = " ".join(rng)
+            print('set type iprange')
+            print(f'set start-ip {range[0]}')
+            print(f'set end-ip {range[1]}')
             print("next")
     print("end")
 
@@ -63,7 +67,7 @@ create_object_addr()
 
 def create_services_obj():
 
-    # this regex is to match for all services object configured on firewall Cisco ASA
+    # this regex is to match for all services on firewall Cisco ASA
     srv_pattern = "object service (?P<service>\S+)"
     srv_regex = re.compile(srv_pattern)
 
@@ -74,7 +78,7 @@ def create_services_obj():
     tcp_regex = re.compile(tcp_pattern)
 
     # Convert address objects from Cisco ASA to Fortigate object services
-    print("\nconfig firewall service")
+    print("\nconfig firewall service custom")
     for line in show_services.splitlines():
         if srv_regex.search(line):
             nmservice = line.split()[2]
@@ -83,11 +87,14 @@ def create_services_obj():
             tcp = line.split()[4]
             if "ldap" in tcp:
                 print(f"set tcp-portrange 389")
+                print(f"set udp-portrange 389")
             else:
                 print(f"set tcp-portrange {tcp}")
+            print("next")
         if udp_regex.search(line):
             print(f"edit {nmservice}")
             udp = line.split()[4]
+            print(f"set tcp-portrange {udp}")
             print(f"set udp-portrange {udp}")
             print("next")
     print("end")
