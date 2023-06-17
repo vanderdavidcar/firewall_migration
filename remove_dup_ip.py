@@ -6,7 +6,7 @@ objects = ["fontnet", "redes"]
 # Using external data to remove duplicated IP addresses
 for fi in objects:
     if fi in objects:
-        with open(f'{fi}', 'r') as fp:
+        with open(f'{fi}_paci', 'r') as fp:
             address = fp.read().split()
             i = '\n'.join(address)
 
