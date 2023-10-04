@@ -1,10 +1,10 @@
-# Automation to parsing configurations from Cisco ASA 5500 Series Adaptive Security Appliances to Fortigate (FortiOS)
+## Automation to parsing configurations from Cisco ASA 5500 Series Adaptive Security Appliances to Fortigate (FortiOS)
 
 Challenges that I had to convert all Cisco IOS script from Cisco ASA 5500 Series Adaptive Security Appliances to Fortigate (FortiOS)
 
 Each one were created to specific challenges </br>
 
-## Customer folder
+### Customer folder
 
 Creating TCP custom services ports
 script_02_service.py
@@ -18,7 +18,7 @@ script_04_ipaddr_object.py
 Create all incoming rules 
 script_05_rules.py
 
-## General_config folder
+### General_config folder
 
 Looking for all object-group in Cisco ASA  and convert all IP address to group-address in FortiOS </br>
 script_grpaddr.py
