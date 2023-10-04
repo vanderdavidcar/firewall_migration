@@ -17,11 +17,11 @@ to connect and collect
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable()
 
-customer = "ITAU"
+customer = "outside"
 cmd = net_connect.send_command(f"show run access-list | in {customer}")
 print(cmd)
 
-untrustintf = "UNTRUST-1/39.1505)"
+untrustintf = "UNTRUST-1/39.1505"
 
 """
 Handle exception when does not have a specific match
