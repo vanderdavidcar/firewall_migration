@@ -11,9 +11,6 @@ load_dotenv()
 # To have a logging only for Netmiko connection
 import logging
 
-logging.basicConfig(filename="netmiko_global.log", level=logging.DEBUG)
-logger = logging.getLogger("netmiko")
-
 start_time = datetime.now()
 
 
@@ -23,7 +20,9 @@ Call function dev_connection that have all device and user information to connec
 net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable()
 term_pager0 = net_connect.send_command('terminal pager 0')
-showrun = net_connect.send_command(f"show running-config | in 201.31.5")
+
+# Find all access-list from specific block IP address
+showrun = net_connect.send_command(f"show running-config | in 198.32.5")
 shrun = str(showrun.splitlines())
 
 any4 = "access-list Internet-ACL.*tcp.(\S+).host.(\S+).eq.(\d+)"
@@ -32,6 +31,8 @@ any4_regex = re.findall(any4, showrun)
 """
 All TCP ports used on access-list
 """
+
+#This is loop you can use all ports founded on access-lists
 #for grpobj in any4_regex:
 #        tcp = grpobj[2]
 #        print(tcp)
@@ -39,7 +40,7 @@ All TCP ports used on access-list
 
 def create_tcpudp_ports():
     
-    
+    # Specific list ports to use on loop below
     ports = ['7443', '8443', '1935', '1024','9443', '8088', '18090', '18090']
 
     print("\nconfig firewall service custom")    
@@ -71,11 +72,12 @@ def create_tcpudp_ports():
             f.write(f'{str(new_ips)}')
             f.close()
         
-            # Remove special characteres to use data on address group
+            # Remove special characters to use data on address group using bash command "sed"
             delcharactere = f"sed -i 's/\[/ /g' retrieve_{rng}_ips.txt && sed -i 's/\]//g' retrieve_{rng}_ips.txt"
             cmdFile = os.system(delcharactere)
             time.sleep(0.5)
 
+    # Read a file that have all TCP Ports to create a service group
     with open(f'retrieve_{rng}_ips.txt', 'r') as fa:
         cust_port = fa.read().splitlines()
         print("\nconfig firewall service group")
