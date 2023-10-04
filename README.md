@@ -9,25 +9,25 @@ Each one were created to specific challenges </br>
 <b>Creating TCP custom services ports</br></b>
 script_02_service.py
 
-Find all address group to create</br>
+<b>Find all address group to create</br></b>
 script_03_find_grpaddr.py
 
-Create all IP address find ou in source and destination and address-groups</br>
+<b>Create all IP address find ou in source and destination and address-groups</br></b>
 script_04_ipaddr_object.py
 
-Create all incoming rules</br>
+<b>Create all incoming rules</br></b>
 script_05_rules.py
 
 ### General_config folder
 
-Looking for all object-group in Cisco ASA  and convert all IP address to group-address in FortiOS </br>
+<b>Looking for all object-group in Cisco ASA  and convert all IP address to group-address in FortiOS </br></b>
 script_grpaddr.py
 
-Converting all interface to FortiOS</br>
+<b>Converting all interface to FortiOS</br></b>
 script_collect_intface.py
 
-Converting routing table</br>
+<b>Converting routing table</br></b>
 script_route_table.py
 
-Looking for peer IPSec active informations</br>
+<b>Looking for peer IPSec active informations</br></b>
 search_ipsec_info.py
