@@ -17,8 +17,7 @@ script_04_ipaddr_object.py
 
 <b>Create all incoming rules</br></b>
 script_05_rules.py
-
-### General_config folder
+## General_config folder
 
 <b>Looking for all object-group in Cisco ASA  and convert all IP address to group-address in FortiOS </br></b>
 script_grpaddr.py
