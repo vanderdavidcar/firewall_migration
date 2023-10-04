@@ -1,5 +1,5 @@
-DEBUG:paramiko.transport:starting thread (client mode): 0xe7744910
-DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.11.0
+DEBUG:paramiko.transport:starting thread (client mode): 0x94e79810
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_3.1.0
 DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-Cisco-1.25
 INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
 DEBUG:paramiko.transport:=== Key exchange possibilities ===
@@ -44,8 +44,8 @@ Type help or '?' for a list of available commands.
 BSL-PES-FW01> 
 
 BSL-PES-FW01> 
-DEBUG:netmiko:read_channel: t
-DEBUG:netmiko:read_channel: erminal w
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: terminal w
 DEBUG:netmiko:read_channel: idth 511
                        ^
 ERROR: % Invalid input detected at '^' marker.
@@ -68,8 +68,8 @@ DEBUG:netmiko:Command: terminal length 0
 DEBUG:netmiko:write_channel: b'terminal length 0\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: terminal len
-DEBUG:netmiko:read_channel: gth 0
+DEBUG:netmiko:read_channel: terminal le
+DEBUG:netmiko:read_channel: ngth 0
                        ^
 ERROR: % Invalid input detected at '^' marker.
 
@@ -122,9 +122,9 @@ Password
 DEBUG:netmiko:write_channel: b'********\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: *********
+DEBUG:netmiko:read_channel: ******
+DEBUG:netmiko:read_channel: ***
 
-DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 BSL-PES-FW01# 
 DEBUG:netmiko:Pattern found: (BSL\-PES\-FW01) : *********
@@ -149,8 +149,8 @@ DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'terminal pager 0\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: terminal pager
-DEBUG:netmiko:read_channel:  0
+DEBUG:netmiko:read_channel: terminal page
+DEBUG:netmiko:read_channel: r 0
 
 BSL-PES-FW01# 
 DEBUG:netmiko:Pattern found: (terminal\ pager\ 0) terminal pager 0
@@ -165,10 +165,9 @@ DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'sh vpn-sessiondb l2l\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh vpn-sessiondb
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel:  l2l
+DEBUG:netmiko:read_channel: sh vpn-
+DEBUG:netmiko:read_channel: session
+DEBUG:netmiko:read_channel: db l2l
 
 Session Type: LAN-to-LAN
 
@@ -177,36 +176,38 @@ Index        : 58021                  IP Addr      : 201.76.186.70
 Protocol     : IKEv1 IPsec
 Encryption   : IKEv1: (1)AES256  IPsec: (4)AES256
 Hashing      : IKEv1: (1)SHA1  IPsec: (4)SHA1
-Bytes Tx     : 241049462              Bytes Rx     : 780835710
+Bytes Tx     : 241050806              Bytes Rx     : 780957781
 Login Time   : 13:47:29 utc Thu Sep 28 2023
-Duration     : 5d 22h:58m:19s
+Duration     : 5d 23h:08m:12s
 Connection   : 200.169.116.9
 Index        : 58380                  IP Addr      : 200.169.116.9
 Protocol     : IKEv1 IPsec
 Encryption   : IKEv1: (1)AES256  IPsec: (1)AES256
-Hashing      : IKEv1: (1)SHA1  IPsec: (1)SHA1
-Bytes Tx     : 941284                 Bytes Rx     : 0
-Login Time   : 15:37:21 utc Tue Oct 3 2023
-Duration     : 21h:08m:27s
 
 DEBUG:netmiko:Pattern found: (sh\ vpn\-sessiondb\ l2l) sh vpn-sessiondb l2l
-DEBUG:netmiko:read_channel: Connection   : 200.57.168.92
-Index        : 58383                  IP Addr      : 200.57.168.92
-Protocol     : IKEv1
-Encryption   : IKEv1: (1)AES256       Hashing      : IKEv1: (1)SHA1
-Bytes Tx     : 0                      Bytes Rx     : 0
-Login Time   : 22:07:03 utc Tue Oct 3 2023
-Duration     : 14h:38m:45s
+DEBUG:netmiko:read_channel: Hashing      : IKEv1: (1)SHA1  IPsec: (1)SHA1
+Bytes Tx     : 948600                 Bytes Rx     : 0
+Login Time   : 15:37:21 utc Tue Oct 3 2023
+Duration     : 21h:18m:20s
 Connection   : 200.95.161.2
 Index        : 58389                  IP Addr      : 200.95.161.2
 Protocol     : IKEv1 IPsec
 Encryption   : IKEv1: (1)AES256  IPsec: (3)AES256
 Hashing      : IKEv1: (1)SHA1  IPsec: (3)SHA1
-Bytes Tx     : 17622944               Bytes Rx     : 242995904
+Bytes Tx     : 18094366               Bytes Rx     : 248001949
 Login Time   : 06:29:28 utc Wed Oct 4 2023
-Duration     : 6h:16m:20s
+Duration     : 6h:26m:13s
+Connection   : 200.57.168.92
+Index        : 58390                  IP Addr      : 200.57.168.92
+Protocol     : IKEv1
+Encryption   : IKEv1: (1)AES256       Hashing      : IKEv1: (1)SHA1
+Bytes Tx     : 0                      Bytes Rx     : 0
+Login Time   : 12:51:10 utc Wed Oct 4 2023
+Duration     : 0h:04m:31s
 
 BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:write_channel: b'\n'
 DEBUG:netmiko:read_channel: 
@@ -217,13 +218,19 @@ DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'sh run | in 201.76.186.70\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh run | in 201.76.186.7
-DEBUG:netmiko:read_channel: 0
 
-DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ 201\.76\.186\.70) sh run | in 201.76.186.70
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: sh run | in 
+DEBUG:netmiko:read_channel: 201.76
+DEBUG:netmiko:read_channel: .186.70
+
+DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ 201\.76\.186\.70) 
+
+BSL-PES-FW01# sh run | in 201.76.186.70
 DEBUG:netmiko:read_channel:  network-object host 201.76.186.70
  network-object host 201.76.186.70
-access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.4 eq 9443 
+
+DEBUG:netmiko:read_channel: access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.4 eq 9443 
 access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.9 eq 8088 
 access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.9 eq 8443 
 access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.9 eq 9443 
@@ -231,8 +238,7 @@ access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.9 
 access-list Internet-ACL extended permit ip host 201.76.186.70 host 201.31.5.11 
 access-list Internet-ACL extended permit ip host 201.76.186.70 host 201.31.5.29 
 access-list Internet-ACL extended permit ip host 201.76.186.70 host 201.31.5.30 
-
-DEBUG:netmiko:read_channel: access-list Internet-ACL extended permit tcp host 201.76.186.70 object-group DM_INLINE_NETWORK_164 object-group DM_INLINE_TCP_18 
+access-list Internet-ACL extended permit tcp host 201.76.186.70 object-group DM_INLINE_NETWORK_164 object-group DM_INLINE_TCP_18 
 access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.29 eq https 
 access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.30 eq https 
 access-list Internet-ACL extended permit tcp host 201.76.186.70 host 201.31.5.9 eq 7443 
@@ -258,6 +264,9 @@ DEBUG:netmiko:write_channel: b'sh run | in outside-map 12 match\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: sh run | in outside-
 DEBUG:netmiko:read_channel: map 12
 DEBUG:netmiko:read_channel:  match
@@ -268,6 +277,7 @@ DEBUG:netmiko:read_channel:
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: crypto map outside-map 12 match address outside_cryptomap_10
 
+DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 BSL-PES-FW01# 
@@ -281,15 +291,16 @@ DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'sh run | in outside_cryptomap_10 extended\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh run | in outside_cr
-DEBUG:netmiko:read_channel: yptomap_10
-DEBUG:netmiko:read_channel:  extended
+DEBUG:netmiko:read_channel: sh run | in outside_c
+DEBUG:netmiko:read_channel: ryptom
+DEBUG:netmiko:read_channel: ap_10 extended
 
 DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside_cryptomap_10\ extended) sh run | in outside_cryptomap_10 extended
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: access-list outside_cryptomap_10 extended permit ip object-group 1042548BRAEMPU001_Local06 object-group 1042548BRAEMPU001_remote 
 
+DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
@@ -304,8 +315,8 @@ DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'sh run | in 200.169.116.9\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh run | in 200.169.116.
-DEBUG:netmiko:read_channel: 9
+DEBUG:netmiko:read_channel: sh run | in 200.169.116
+DEBUG:netmiko:read_channel: .9
 
 DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ 200\.169\.116\.9) sh run | in 200.169.116.9
 DEBUG:netmiko:read_channel: 
@@ -328,10 +339,10 @@ DEBUG:netmiko:read_channel:
 DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'sh run | in outside-map 56 match\n'
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: s
-DEBUG:netmiko:read_channel: h run | in outside-map 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 56 match
+DEBUG:netmiko:read_channel: sh run | in outside-map 
+DEBUG:netmiko:read_channel: 5
+DEBUG:netmiko:read_channel: 6 match
 
 DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside\-map\ 56\ match) sh run | in outside-map 56 match
 DEBUG:netmiko:read_channel: 
@@ -354,8 +365,8 @@ DEBUG:netmiko:write_channel: b'sh run | in outside_cryptomap_61 extended\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: sh run | in outside_cryp
-DEBUG:netmiko:read_channel: tom
-DEBUG:netmiko:read_channel: ap_61 extended
+DEBUG:netmiko:read_channel: tomap_61 ex
+DEBUG:netmiko:read_channel: tended
 
 DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside_cryptomap_61\ extended) sh run | in outside_cryptomap_61 extended
 DEBUG:netmiko:read_channel: 
@@ -363,78 +374,6 @@ DEBUG:netmiko:read_channel:
 DEBUG:netmiko:read_channel: access-list outside_cryptomap_61 extended permit ip object-group 1042548BRAEMPU001_Local4_imusica object-group 1042548BRAEMPU001_Remote4_huawai 
 
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-BSL-PES-FW01# 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:write_channel: b'\n'
-DEBUG:netmiko:read_channel: 
-
-BSL-PES-FW01# 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
-DEBUG:netmiko:write_channel: b'sh run | in 200.57.168.92\n'
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh run 
-DEBUG:netmiko:read_channel: | in 200.57.168.92
-
-DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ 200\.57\.168\.92) sh run | in 200.57.168.92
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: crypto map outside-map 5 set peer 200.57.168.92 
-
-DEBUG:netmiko:read_channel: tunnel-group 200.57.168.92 type ipsec-l2l
-tunnel-group 200.57.168.92 general-attributes
-tunnel-group 200.57.168.92 ipsec-attributes
-
-DEBUG:netmiko:read_channel: 
-BSL-PES-FW01# 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:write_channel: b'\n'
-DEBUG:netmiko:read_channel: 
-
-BSL-PES-FW01# 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
-DEBUG:netmiko:write_channel: b'sh run | in outside-map 5 match\n'
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh run | in outside-map 
-DEBUG:netmiko:read_channel: 5 match
-
-DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside\-map\ 5\ match) sh run | in outside-map 5 match
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: crypto map outside-map 5 match address outside_cryptomap_3
-
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-BSL-PES-FW01# 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:write_channel: b'\n'
-DEBUG:netmiko:read_channel: 
-
-BSL-PES-FW01# 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
-DEBUG:netmiko:write_channel: b'sh run | in outside_cryptomap_3 extended\n'
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: sh run | in outside_cryp
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: tomap_3 extended
-
-DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside_cryptomap_3\ extended) sh run | in outside_cryptomap_3 extended
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: access-list outside_cryptomap_3 extended permit ip object-group Embrtl-to-Mex-Monitoreo object-group Mex-to-Embrtl-Monitor 
-
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
@@ -475,10 +414,10 @@ DEBUG:netmiko:write_channel: b'sh run | in outside-map 14 match\n'
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: sh run | in outside-map 
-DEBUG:netmiko:read_channel: 14
-DEBUG:netmiko:read_channel:  match
+DEBUG:netmiko:read_channel: 14 match
 
 DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside\-map\ 14\ match) sh run | in outside-map 14 match
+DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
@@ -496,14 +435,135 @@ DEBUG:netmiko:read_channel:
 DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
 DEBUG:netmiko:write_channel: b'sh run | in outside_cryptomap_12 extended\n'
 DEBUG:netmiko:read_channel: 
-DEBUG:netmiko:read_channel: s
-DEBUG:netmiko:read_channel: h run | in outside_cryp
-DEBUG:netmiko:read_channel: tomap_12 extended
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: sh run | in outside_cryp
+DEBUG:netmiko:read_channel: tom
+DEBUG:netmiko:read_channel: ap_12 extended
 
 DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside_cryptomap_12\ extended) sh run | in outside_cryptomap_12 extended
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: access-list outside_cryptomap_12 extended permit ip object-group DM_INLINE_NETWORK_150 object-group DM_INLINE_NETWORK_141 
+
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'\n'
+DEBUG:netmiko:read_channel: 
+
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
+DEBUG:netmiko:write_channel: b'sh run | in 200.57.168.92\n'
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: sh run | 
+DEBUG:netmiko:read_channel: in 200.57.168.92
+
+DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ 200\.57\.168\.92) sh run | in 200.57.168.92
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: crypto map outside-map 5 set peer 200.57.168.92 
+
+DEBUG:netmiko:read_channel: tunnel-group 200.57.168.92 type ipsec-l2l
+tunnel-group 200.57.168.92 general-attributes
+tunnel-group 200.57.168.92 ipsec-attributes
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'\n'
+DEBUG:netmiko:read_channel: 
+
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
+DEBUG:netmiko:write_channel: b'sh run | in outside-map 5 match\n'
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: sh run | in
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel:  outside-map 5 match
+
+DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside\-map\ 5\ match) sh run | in outside-map 5 match
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: crypto map outside-map 5 match address outside_cryptomap_3
+
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:write_channel: b'\n'
+DEBUG:netmiko:read_channel: 
+
+BSL-PES-FW01# 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:[find_prompt()]: prompt is BSL-PES-FW01#
+DEBUG:netmiko:write_channel: b'sh run | in outside_cryptomap_3 extended\n'
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: sh run | in o
+DEBUG:netmiko:read_channel: utside_
+DEBUG:netmiko:read_channel: cryptomap_3 extended
+
+DEBUG:netmiko:Pattern found: (sh\ run\ \|\ in\ outside_cryptomap_3\ extended) sh run | in outside_cryptomap_3 extended
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: 
+DEBUG:netmiko:read_channel: access-list outside_cryptomap_3 extended permit ip object-group Embrtl-to-Mex-Monitoreo object-group Mex-to-Embrtl-Monitor 
 
 DEBUG:netmiko:read_channel: 
 DEBUG:netmiko:read_channel: 

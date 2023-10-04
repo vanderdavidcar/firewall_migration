@@ -24,6 +24,7 @@ net_connect = ConnectHandler(**dev_connection.iosv)
 net_connect.enable() # privileged EXEC mode
 term_pager0 = net_connect.send_command('terminal pager 0') # terminal page to zero (0) removes any output pagination and will return all output from executing the specified command
 
+# To find all IPSec tunnel active on Cisco ASA
 cmd = net_connect.send_command(f'sh vpn-sessiondb l2l')
 
 # Find Peer IPSec
