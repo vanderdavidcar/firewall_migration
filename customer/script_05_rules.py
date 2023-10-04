@@ -22,7 +22,7 @@ term_pager0 = net_connect.send_command("terminal pager 0")
 Retrieve all source and destination IP Addresses find out in access-list Internet-ACL 
 """
 
-shrun = net_connect.send_command(f"show running-config | in 201.31.5.")
+shrun = net_connect.send_command(f"show running-config | in 198.32.5.")
 
 # Firewall interfaces
 intf_untrust = "UNTRUST-39.1527"
@@ -32,7 +32,7 @@ intf_trust = "TRUST-1/38.1040"
 Function to find object-group names used in access-list Internet-ACL to looking for source IPs
 """
 
-# Regex pattern
+# Regex pattern to find source, destination and ports in access-list
 destination = "access-list Internet-ACL.*tcp.host.(\S+).host.(\S+).eq.(\S+)"
 dest_regex = re.findall(destination, shrun)
 
@@ -50,7 +50,7 @@ def create_new_objectgrp():
         for grpobj in regex_grp:
                 if regex_grp:
 
-                        ipaddr = ["201.31.5.4", "201.31.5.9"]
+                        ipaddr = ["198.32.5.4", "198.32.5.9"]
                         for ipadd in ipaddr:
 
                                 if  ipadd in grpobj:
@@ -74,9 +74,11 @@ def create_rule():
                 del_duplicated = f'sort -u output_{grpobj[1]}_{grpobj[2]}_newgrpaddr.txt > output_{grpobj[1]}_{grpobj[2]}_ips.txt'
                 cmdFile = os.system(del_duplicated)
                 
+                # Open external file that have the new groups of IP from specific ports '8443','7443','8088' founded in function below
                 with open(f"output_{grpobj[1]}_{grpobj[2]}_ips.txt", "r") as f:
                         ip = f.read().splitlines()
 
+                # Create firewall (FortiOS) rule 
                 print("edit 0")
                 print(f'set name "ALLOWED-to-{grpobj[1]}-TCP/{grpobj[2]}"')
                 print(f'set srcintf "{intf_untrust}"')
