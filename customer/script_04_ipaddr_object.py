@@ -17,10 +17,10 @@ net_connect.enable()  # Needed beacause command below is necessary privilege 15 
 term_pager0 = net_connect.send_command("terminal pager 0")
 
 # Command executed on Cisco ASA to find a costumer configuration
-shrun = net_connect.send_command(f"show running-config | in 201.31.5")
+shrun = net_connect.send_command(f"show running-config | in 198.32.5")
 
 
-# Regex pattern
+# Regex pattern to find only IP addresses on access-list
 source = "access-list Internet-ACL.*tcp.host.(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 src_regex = re.findall(source, shrun)
 
@@ -71,7 +71,8 @@ def create_addr_object():
         # Using external file
         with open(f'output_{i}_new_ips.txt', 'r') as f:
             new_ips = f.read().splitlines()
-        
+
+            # Creating prefix lenght objects        
             for line in new_ips:
                 print(f'edit {line}/32')
                 print(f"set subnet {line} 255.255.255.255")
