@@ -17,7 +17,8 @@ script_04_ipaddr_object.py
 
 <b>Create all incoming rules</br></b>
 script_05_rules.py
-## General_config folder
+
+### General_config folder
 
 <b>Looking for all object-group in Cisco ASA  and convert all IP address to group-address in FortiOS </br></b>
 script_grpaddr.py
@@ -30,3 +31,9 @@ script_route_table.py
 
 <b>Looking for peer IPSec active informations</br></b>
 search_ipsec_info.py
+
+### cvs_manipulation folder
+
+<b>Retrieve files "rules_gp.csv" and "rules.csv" and use jin jatemplate to create all address-object and group-address </br></b>
+script_rules.py
+
