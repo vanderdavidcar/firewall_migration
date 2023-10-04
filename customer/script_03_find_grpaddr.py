@@ -18,7 +18,7 @@ net_connect.enable()  # Needed beacause command below is necessary privilege 15 
 term_pager0 = net_connect.send_command("terminal pager 0")
 
 # Command executed on Cisco ASA to find a costumer configuration
-shrun = net_connect.send_command(f"show running-config | in 201.31.5")
+shrun = net_connect.send_command(f"show running-config | in 198.32.5")
 
 """
 Function to find object-group names used in access-list Internet-ACL to looking for source IPs
