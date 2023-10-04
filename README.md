@@ -4,7 +4,7 @@ Challenges that I had to convert all Cisco IOS script from Cisco ASA 5500 Series
 
 Each one were created to specific challenges </br>
 
-## Folder customer
+## Customer folder
 
 Creating TCP custom services ports
 script_02_service.py
@@ -18,7 +18,7 @@ script_04_ipaddr_object.py
 Create all incoming rules 
 script_05_rules.py
 
-## Folder general_config
+## General_config folder
 
 Looking for all object-group in Cisco ASA  and convert all IP address to group-address in FortiOS </br>
 script_grpaddr.py
