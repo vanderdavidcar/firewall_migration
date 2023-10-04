@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from netmiko import ConnectHandler
 import dev_connection
 import re
