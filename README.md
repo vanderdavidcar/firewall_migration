@@ -34,6 +34,6 @@ search_ipsec_info.py
 
 ### cvs_manipulation folder
 
-<b>Retrieve files "rules_gp.csv" and "rules.csv" and use jin jatemplate to create all address-object and group-address </br></b>
+<b>Retrieve files "rules_gp.csv" and "rules.csv" using jinja template to create all address-object and group-address </br></b>
 script_rules.py
 
